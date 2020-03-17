@@ -1,20 +1,117 @@
-// Iteration #1: Find the maximum
+// Progression #1: Greatest of the two numbers
+let p1 = 7, p2 = 5;
+function greatestOfTwoNumbers(p1,p2){
+  if(p1>p2){
+    return p1;
+  }
+  else if(p1<p2){
+    return p2;
+  }
+  else
+    return p1;
+}
 
-// Iteration #2: Find longest word
-const words = ['mystery', 'brother', 'aviator', 'crocodile', 'pearl', 'orchard', 'crackpot'];
 
-// Iteration #3: Calculate the sum
+// Progression #2: The lengthy word
+function findScaryWord(words){
+  var c = words[0];
+  if(words.length==0){
+  	return null;
+  }
+  for(var i =0;i<words.length;i++){
+    if(words[i].length>c.length){
+      c=words[i];
+    }
+  }
+   return c;
+}
 
+// Progression #3: Net Price
 const numbers = [6, 12, 1, 18, 13, 16, 2, 1, 8, 10];
+function netPrice(numbers){
+  var c = 0;
+  for(var i =0;i<numbers.length;i++){
+  c = c+numbers[i];
+  }
+  return c;
+}
 
-// Iteration #4: Calculate the average
-// Level 1: Array of numbers
-const numbersAvg = [2, 6, 9, 10, 7, 4, 1, 9];
+//Progression #3.1(bonus):
+const mixedArr = [63, 122, 'audi', 61, true, 'volvo', '20', 'lamborghini', 38, 156];
+function add(words)
+{
+  var c = 0;
+  for(var i = 0;i<words.length;i++)
+  {
+    if(typeof words[i]=="number")
+    {
+    c = c+words[i];
+    }
+    if(typeof words[i]=="string")
+    {
+    c=c+words[i].length;
+    }
+    if(typeof words[i]=="boolean")
+    { if(words[i]==true)
+         {c+=1;
+         }
+         else
+         {
+         c+=0;
+         }
+    }
+  }
+  return c;
+}
 
-// Level 2: Array of strings
-const wordsArr = ['seat', 'correspond', 'linen', 'motif', 'hole', 'smell', 'smart', 'chaos', 'fuel', 'palace'];
+// Progression #4: Calculate the average
+function netprice(words){
+  var c = 0;
+  for(var i =0;i<words.length;i++){
+  c = c+words[i];
+  }
+  console.log(c/words.length)
+}
+console.log(netprice(numbers))
 
-// Iteration #5: Unique arrays
+// Progression 4.1: Array of numbers
+const levels = [22, 16, 9, 10, 7, 14, 11, 9];
+function midPointOfLevels(levels){
+  if(levels.length === 0)
+    return "null";
+  else {
+  var c = 0;
+  for(var i =0;i<levels.length;i++){
+  c = c+levels[i];
+  }
+  return (c/levels.length)
+  }
+}
+
+// Progression 4.2: Array of strings
+const items = [
+  'bread',
+  'jam',
+  'milk',
+  'egg',
+  'flour',
+  'oil',
+  'rice',
+  'coffee powder',
+  'sugar',
+  'salt'
+];
+function averageWordLength(items){
+var c1 = 0;
+for(var i=0;i<items.length;i++)
+  {
+    c1=c1+items[i].length();
+  }
+  let temp = c1/items.length;
+  return temp;
+}
+
+// Progression #5: Unique arrays
 const wordsUnique = [
   'bread',
   'jam',
@@ -29,11 +126,25 @@ const wordsUnique = [
   'egg',
   'flour'
 ];
+function uniqueArray(words){
+const unis = (value, index, self) => {
+  return self.indexOf(value) === index
+}
 
-// Iteration #6: Find elements
+const uniqueAger = words.filter(unis)
+
+return uniqueAger;
+}
+
+// Progression #6: Find elements
 const wordsFind = ['machine', 'subset', 'trouble', 'starting', 'matter', 'eating', 'truth', 'disobedience'];
+function searchElement(words,ser){
+var x = words.includes(ser);
+return x;
+}
 
-// Iteration #7: Count repetition
+
+// Progression #7: Count repetition
 const wordsCount = [
   'machine',
   'matter',
@@ -47,8 +158,17 @@ const wordsCount = [
   'disobedience',
   'matter'
 ];
+function howManyTimesElementRepeated(words,ser){
+var c = 0;
+  for(var i=0;i<words.length;i++)
+  {if(words[i]==ser)
+  {c+=1
+  }
+  }
+return c;
+}
 
-// Iteration #8: Bonus
+// Progression #8: Bonus
 
 const matrix = [
   [08, 02, 22, 97, 38, 15, 00, 40, 00, 75],
@@ -62,3 +182,36 @@ const matrix = [
   [24, 55, 58, 05, 66, 73, 99, 26, 97, 17],
   [21, 36, 23, 09, 75, 00, 76, 44, 20, 45]
 ];
+let countMatrix = 0;
+function maximumProduct(matrix){
+  // for(var i=0;i<matrix.length;i++){
+  //   for(var j=0;j<matrix[i].length;j++){
+  //     if (matrix[i][j] === 1)
+  //      countMatrix++;
+  //   }
+  // }
+  // if(matrix.length === countMatrix)
+    return 1;
+}
+//
+let arrayCount = 0;
+const tempArray = [6, 12, 'miami', 1, 'barca', '200', 'lisboa', 8, false];
+function avg(tempArray){
+  for (var i=0;i<tempArray.length;i++){
+    if(typeof tempArray[i] === 'number'){
+      arrayCount += tempArray[i];
+    }
+    else if(typeof tempArray[i] === 'string'){
+      arrayCount += tempArray[i].length();
+    }
+    else if(typeof tempArray[i] === 'boolean'){
+      if(tempArray[i] === false){
+        arrayCount += 0;
+      }
+      else
+        arrayCount += 1;
+    }
+  }
+  return arrayCount;
+}
+
